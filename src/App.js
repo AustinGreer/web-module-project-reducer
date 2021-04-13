@@ -6,7 +6,8 @@ import {
   changeOperation, 
   clearDisplay,
   memoryValue,
-  memoryApplied
+  memoryApplied,
+  memoryClear
 } from './actions/index'
 
 import TotalDisplay from './components/TotalDisplay';
@@ -37,6 +38,10 @@ function App() {
     dispatch(memoryApplied())
   }
 
+  const handleMemoryClear = () => {
+    dispatch(memoryClear())
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -56,7 +61,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={handlememoryValue} />
               <CalcButton value={"MR"} onClick={handleMemoryApplied} />
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={handleMemoryClear} />
             </div>
 
             <div className="row">

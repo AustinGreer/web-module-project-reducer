@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const MEMORY_VALUE = "MEMORY_VALUE";
 export const MEMORY_APPLIED = "MEMORY_APPLIED";
+export const MEMORY_CLEAR = "MEMORY_CLEAR";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -27,4 +28,8 @@ export const memoryValue = () => {
 
 export const memoryApplied = () => {
     return({type:MEMORY_APPLIED})
+}
+
+export const memoryClear = () => {
+    return({type:MEMORY_CLEAR})
 }
