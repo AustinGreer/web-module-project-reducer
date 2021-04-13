@@ -1,7 +1,11 @@
 import React, { useReducer } from 'react';
 
 import {initialState, reducer} from './reducers/index';
-import { applyNumber, changeOperation } from './actions/index'
+import { 
+  applyNumber, 
+  changeOperation, 
+  clearDisplay
+} from './actions/index'
 
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
@@ -17,6 +21,10 @@ function App() {
 
   const handleChangeOperation = (operation) => {
     dispatch(changeOperation(operation))
+  }
+
+  const handleClearDisplay = () => {
+    dispatch(clearDisplay())
   }
 
   return (
@@ -66,7 +74,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={handleClearDisplay}/>
             </div>
 
           </form>
